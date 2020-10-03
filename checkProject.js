@@ -4,6 +4,7 @@ const request = require("request");
 
 if (process.argv.length !== 6) {
   console.log("Usage: ./checkProject.js apiKey email password project");
+  process.exit();
 }
 
 const apiKey = process.argv[2];
