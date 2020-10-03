@@ -74,11 +74,18 @@ request.post(
               task.checkid = idResp.id;
             }
           }
-          await sleep(10000);
           for (task of tasks) {
             if (task.checker_available == true) {
               console.log(`----> Task ${task.position - 1}`);
-              resultTask = await requestResult(task, myToken);
+              let checkedFlag = false;
+              while (checkedFlag === false) {
+                sleep(100);
+                resultTask = await requestResult(task, myToken);
+                if (resultTask.status !== "Sent") {
+                  checkedFlag = true;
+                }
+              }
+
               for (check of resultTask.result_display.checks) {
                 if (check.passed === true) console.log(`${check.title}: Green`);
                 else {

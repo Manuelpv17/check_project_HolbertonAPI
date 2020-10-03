@@ -12,7 +12,7 @@ git clone https://github.com/Manuelpv17/check_project_HolbertonAPI.git
 
 ## Usage
 
-Usage: ./checkProject.js apiKey email password project
+    Usage: ./checkProject.js apiKey email password project
 
 Your Api Key can be found in your Holberton Intranet seccion My Tools [Link](https://intranet.hbtn.io/dashboards/my_tools)
 
